@@ -40,8 +40,8 @@ The `express-app` folder is just a vanilla Express generated app using
 
 ## Author(s)
 
-Frank Hale &lt;frankhale@gmail.com&gt;  
-9 August 2016
+Luis Augusto Melo Rohten &lt;luisaugustomelo@gmail.com&gt;  
+24 August 2016
 
 ## License
 
