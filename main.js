@@ -10,6 +10,7 @@ function createWindow () {
     width: 640,
     height: 480
   });
+
   mainWindow.loadURL(`file://${__dirname}/index.html`)
   //mainWindow.webContents.openDevTools();
 
