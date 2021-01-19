@@ -1,15 +1,20 @@
 import { getRepository } from 'typeorm';
 import { compare } from 'bcryptjs';
-
+import { sign } from 'jsonwebtoken';
 import User from '../models/User';
 
+/*
+* Gerar md5 - www.md5.cz
+* Inspecionar Token JWT - jwt.io
+*/
 interface Request {
     email: string;
     password: string;
 }
 
 interface Response {
-    user: User
+    user: User;
+    token: string;
 }
 
 class AuthenticateUserService {
@@ -28,8 +33,14 @@ class AuthenticateUserService {
             throw new Error('Incorrent email/password combination.');
         }
 
+        const token = sign({ }, '7aa138d69fa9714493ca921dd4b18328', {
+            subject: user.id,
+            expiresIn: '1d',
+        });
+
         return {
-            user
+            user,
+            token,
         };
     }
 }
