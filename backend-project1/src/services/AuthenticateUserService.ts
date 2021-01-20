@@ -3,6 +3,8 @@ import { compare } from 'bcryptjs';
 import { sign } from 'jsonwebtoken';
 import User from '../models/User';
 
+import authConfig from '../config/auth';
+
 /*
 * Gerar md5 - www.md5.cz
 * Inspecionar Token JWT - jwt.io
@@ -33,9 +35,11 @@ class AuthenticateUserService {
             throw new Error('Incorrent email/password combination.');
         }
 
-        const token = sign({ }, '7aa138d69fa9714493ca921dd4b18328', {
+        const { secret, expiresIn } = authConfig.jwt;
+
+        const token = sign({ }, secret, {
             subject: user.id,
-            expiresIn: '1d',
+            expiresIn,
         });
 
         return {
