@@ -1,6 +1,6 @@
 import { Router } from 'express';
 
-import AuthenticateUserService from '../../modules/users/services/AuthenticateUserService';
+import AuthenticateUserService from '@modules/users/services/AuthenticateUserService';
 
 const sessionsRouter = Router();
 
@@ -13,9 +13,9 @@ sessionsRouter.post('/', async (request, response) => {
         const { user, token } = await autenticateUser.execute({
             email,
             password,
-        })
+        });
 
-        // @ts-expect-error
+        // @ts-expect-error forçando remoção do password
         delete user.password;
         return response.json({ user, token });
     } catch (err) {

@@ -1,5 +1,14 @@
-import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, ManyToOne, JoinColumn } from 'typeorm';
-import User from '../../../../users/Infra/typeorm/entities/User';
+import {
+    Entity,
+    Column,
+    PrimaryGeneratedColumn,
+    CreateDateColumn,
+    UpdateDateColumn,
+    ManyToOne,
+    JoinColumn,
+} from 'typeorm';
+import User from '@modules/users/infra/typeorm/entities/User';
+
 @Entity('appointments')
 class Appointment {
     @PrimaryGeneratedColumn('uuid')
