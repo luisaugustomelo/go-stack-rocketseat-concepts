@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 
 import express from 'express';
-import routes from './routes';
+import routes from './shared/routes';
 import uploadconfig from './config/upload';
 
 import './database';
