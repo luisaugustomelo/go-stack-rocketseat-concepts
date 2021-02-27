@@ -4,6 +4,6 @@ import IStorageProvider from '@shared/container/providers/StorageProvider/models
 import DiskStorageProvider from '@shared/container/providers/StorageProvider/implementations/DiskStorageProvider';
 
 container.registerSingleton<IStorageProvider>(
-    'DiskStorageProvider',
+    'StorageProvider',
     DiskStorageProvider,
 );
