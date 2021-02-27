@@ -7,18 +7,14 @@ export default class UserAvatarController {
         request: Request,
         response: Response,
     ): Promise<Response> {
-        try {
-            const updateUserAvatar = container.resolve(UpdateUserAvatarService);
-            const user = await updateUserAvatar.execute({
-                user_id: request.user.id,
-                avatarFilename: request.file.filename,
-            });
+        const updateUserAvatar = container.resolve(UpdateUserAvatarService);
+        const user = await updateUserAvatar.execute({
+            user_id: request.user.id,
+            avatarFilename: request.file.filename,
+        });
 
-            // @ts-expect-error forçando remoção do password
-            delete user.password;
-            return response.json(user);
-        } catch (err) {
-            return response.status(400).json({ error: err.message });
-        }
+        // @ts-expect-error forçando remoção do password
+        delete user.password;
+        return response.json(user);
     }
 }
