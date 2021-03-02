@@ -2,7 +2,7 @@ import { uuid } from 'uuidv4';
 import { isEqual, getMonth, getYear, getDate } from 'date-fns';
 
 import IAppointmentsRepository from '@modules/appointments/repositories/IAppointmentsRepository';
-import ICreateAppointmedntDTO from '@modules/appointments/dto/ICreateAppointmentDTO';
+import ICreateAppointmentDTO from '@modules/appointments/dto/ICreateAppointmentDTO';
 import IFindAllInMonthFromProviderDTO from '@modules/appointments/dto/IFindAllInMonthFromProviderDTO';
 import IFindAllInDayFromProviderDTO from '@modules/appointments/dto/IFindAllInDayFromProviderDTO';
 
@@ -56,7 +56,7 @@ class AppointmentsRepository implements IAppointmentsRepository {
         provider_id,
         user_id,
         date,
-    }: ICreateAppointmedntDTO): Promise<Appointment> {
+    }: ICreateAppointmentDTO): Promise<Appointment> {
         const appointment = new Appointment();
 
         Object.assign(appointment, { id: uuid(), date, provider_id, user_id });

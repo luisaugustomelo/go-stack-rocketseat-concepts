@@ -1,7 +1,7 @@
 import { getRepository, Repository, Raw } from 'typeorm';
 
 import IAppointmentsRepository from '@modules/appointments/repositories/IAppointmentsRepository';
-import ICreateAppointmedntDTO from '@modules/appointments/dto/ICreateAppointmentDTO';
+import ICreateAppointmentDTO from '@modules/appointments/dto/ICreateAppointmentDTO';
 import IFindAllInMonthFromProviderDTO from '@modules/appointments/dto/IFindAllInMonthFromProviderDTO';
 import IFindAllInDayFromProviderDTO from '@modules/appointments/dto/IFindAllInDayFromProviderDTO';
 
@@ -68,7 +68,7 @@ class AppointmentsRepository implements IAppointmentsRepository {
         date,
         user_id,
         provider_id,
-    }: ICreateAppointmedntDTO): Promise<Appointment> {
+    }: ICreateAppointmentDTO): Promise<Appointment> {
         const appointment = this.ormRepository.create({
             provider_id,
             date,
