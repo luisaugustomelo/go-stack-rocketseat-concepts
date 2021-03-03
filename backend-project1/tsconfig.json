@@ -4,7 +4,6 @@
     "module": "commonjs",
     "outDir": "./dist",
     "rootDir": "./src",
-    // "composite": true,
     "strict": true,
     "strictPropertyInitialization": false,
     "baseUrl": "./src",
@@ -20,5 +19,5 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "exclude": ["jest.config.ts", "prettier.config.js"],
+  "exclude": ["jest.config.ts", "node_modules", "prettier.config.js", "coverage", ".env", ".env.example"]
 }

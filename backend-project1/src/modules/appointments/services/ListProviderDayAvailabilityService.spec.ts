@@ -1,6 +1,7 @@
 // import AppError from '@shared/errors/AppError';
 
 import FakeAppointmentsRepository from '@modules/appointments/repositories/fakes/FakeAppointmentsRepository';
+
 import ListProviderDayAvailabilityService from './ListProviderDayAvailabilityService';
 
 let fakeAppointmentsRepository: FakeAppointmentsRepository;
@@ -9,6 +10,7 @@ let listProviderDayAvailabilityService: ListProviderDayAvailabilityService;
 describe('ListProviderMonthAvailability', () => {
     beforeEach(() => {
         fakeAppointmentsRepository = new FakeAppointmentsRepository();
+
         listProviderDayAvailabilityService = new ListProviderDayAvailabilityService(
             fakeAppointmentsRepository,
         );
